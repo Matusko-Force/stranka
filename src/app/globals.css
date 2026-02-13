@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #f9f6ee;
+  --text-base: #0c1b33;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", "Menlo", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-base);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  display: flex;
+  gap: 3.5rem;
+  animation: logo-marquee 35s linear infinite;
+}
+
+.logo-marquee-track:hover {
+  animation-play-state: paused;
+}
