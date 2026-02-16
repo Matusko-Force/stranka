@@ -32,7 +32,7 @@ export const PastSpeakersSection = async () => {
                 href={speaker.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block h-64 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent sm:h-72"
+                className="relative block aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent"
               >
                 <Image
                   src={speaker.image}
@@ -43,7 +43,7 @@ export const PastSpeakersSection = async () => {
                 />
               </a>
             ) : (
-              <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent sm:h-72">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent">
                 <Image
                   src={speaker.image}
                   alt={`${speaker.name} portrait`}
