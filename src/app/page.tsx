@@ -1,21 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PastSpeakersSection } from "@/components/past-speakers";
-import SignUpForm from "@/components/sign-up-form";
 import { InstagramEmbed } from "@/components/instagram-embed";
 
 const partnerLogos = [
-  { name: "0100 Conferences", src: "/partners/Conferences.svg", width: 160 },
+  { name: "0100 Conferences", src: "/partners/Conferences.svg", width: 170 },
   { name: "Doers Summit", src: "/partners/doers-summit.svg", width: 170 },
-  { name: "0100 Fund", src: "/partners/fund.svg", width: 150 },
-  { name: "Hustle Fund", src: "/partners/Hustlefund.svg", width: 140 },
-  { name: "Jason Ball", src: "/partners/Jasonball.svg", width: 150 },
-  { name: "Laconia", src: "/partners/Laconia.svg", width: 140 },
-  { name: "Vestberry", src: "/partners/vestberry.png", width: 150 },
-  { name: "Waed", src: "/partners/waed.svg", width: 140 },
-  { name: "Sandberg Capital", src: "/partners/Sandberg.svg", width: 140 },
-  { name: "Flat6Labs", src: "/partners/Flat6Labs.svg", width: 140 },
-  { name: "Silicon Badia", src: "/partners/silicon-badia.svg", width: 140 },
+  { name: "0100 Fund", src: "/partners/fund.svg", width: 340 },
+  { name: "Hustle Fund", src: "/partners/Hustlefund.svg", width: 170 },
+  { name: "Jason Ball", src: "/partners/Jasonball.svg", width: 170 },
+  { name: "Laconia", src: "/partners/Laconia.svg", width: 170 },
+  { name: "Vestberry", src: "/partners/vestberry.png", width: 170 },
+  { name: "Waed", src: "/partners/waed.svg", width: 170 },
+  { name: "Sandberg Capital", src: "/partners/Sandberg.svg", width: 170 },
+  { name: "Flat6Labs", src: "/partners/Flat6Labs.svg", width: 170 },
+  { name: "Silicon Badia", src: "/partners/silicon-badia.svg", width: 170 },
 ];
 
 const instagramPosts = [
@@ -40,22 +39,19 @@ const Header = () => (
         />
       </Link>
       <nav aria-label="Primary navigation" className="hidden gap-6 text-sm font-semibold text-slate-600 md:flex">
-        <Link href="#overview" className="transition hover:text-slate-900">
-          Program
-        </Link>
         <Link href="#speakers" className="transition hover:text-slate-900">
           Speakers
         </Link>
-        <Link href="#signup" className="transition hover:text-slate-900">
+        <a href="#signup" className="transition hover:text-slate-900">
           Sign up
-        </Link>
+        </a>
       </nav>
-      <Link
+      <a
         href="#signup"
         className="hidden rounded-full bg-[#2c2a21] px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:inline-flex"
       >
         Join waitlist
-      </Link>
+      </a>
     </div>
   </header>
 );
@@ -74,20 +70,19 @@ export default function Home() {
               </span>
               <div>
                 <h1 id="hero-title" className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-                  Teaser: next 0100 Academy cohort opens soon
+                  Next Venture Academy cohort opens soon
                 </h1>
                 <p className="mt-4 text-lg text-slate-600">
-                  We are rebuilding the operator-first experience with private mentor rooms,
-                  global investor critiques, and tools you can deploy the same day.
+                  For aspiring investors, angel investors & next-generation venture capitalists.
                 </p>
               </div>
               <div>
-                <Link
+                <a
                   href="#signup"
                   className="inline-flex items-center justify-center rounded-full bg-[#2c2a21] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110"
                 >
                   I want in
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -112,21 +107,50 @@ export default function Home() {
           </p>
           <div className="mt-8 overflow-hidden">
             <div className="logo-marquee-track">
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className="flex min-w-[180px] items-center justify-center opacity-70 transition hover:opacity-100"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={`${logo.name} logo`}
-                    width={logo.width}
-                    height={60}
-                    className="h-12 w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
+                {[...partnerLogos, ...partnerLogos].map((logo, index) => {
+                  const isWideLogo =
+                    logo.name === "Doers Summit" || logo.name === "Hustle Fund";
+                  const isJasonBall = logo.name === "Jason Ball";
+                  const isLaconia = logo.name === "Laconia";
+                  const isFund = logo.name === "0100 Fund";
+                  const isConferences = logo.name === "0100 Conferences";
+                  const displayWidth = isJasonBall
+                    ? 100
+                    : isConferences
+                      ? 110
+                      : isLaconia || isFund
+                        ? 130
+                        : isWideLogo
+                          ? 180
+                          : 120;
+                  const displayHeight = isJasonBall
+                    ? 100
+                    : isConferences
+                      ? 110
+                      : isLaconia || isFund
+                        ? 130
+                        : 120;
+
+                  return (
+                    <div
+                      key={`${logo.name}-${index}`}
+                      className="flex min-w-[180px] items-center justify-center opacity-70 transition hover:opacity-100"
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={`${logo.name} logo`}
+                        width={displayWidth}
+                        height={displayHeight}
+                        className="object-contain"
+                        style={{
+                          width: `${displayWidth}px`,
+                          height: `${displayHeight}px`,
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
           </div>
         </section>
 
@@ -167,7 +191,14 @@ export default function Home() {
               Share your name, company, and best email so we can review your profile and give you priority access when the new cohort opens.
             </p>
           </div>
-          <SignUpForm />
+          <a
+            href="https://tally.so/r/gDMyyK"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110"
+          >
+            Apply now
+          </a>
         </section>
       </main>
     </div>

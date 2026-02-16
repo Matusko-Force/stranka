@@ -37,7 +37,3 @@ body {
   gap: 3.5rem;
   animation: logo-marquee 35s linear infinite;
 }
-
-.logo-marquee-track:hover {
-  animation-play-state: paused;
-}
