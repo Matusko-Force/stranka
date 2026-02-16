@@ -37,3 +37,10 @@ body {
   gap: 3.5rem;
   animation: logo-marquee 35s linear infinite;
 }
+
+@media (max-width: 640px) {
+  .logo-marquee-track {
+    gap: 1.5rem;
+    animation-duration: 28s;
+  }
+}

@@ -8,13 +8,13 @@ export const PastSpeakersSection = async () => {
     <section
       id="speakers"
       aria-labelledby="speakers-title"
-      className="px-6 py-16 md:px-10"
+      className="px-0 py-10 sm:px-4 sm:py-16 md:px-10"
     >
       <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h2
             id="speakers-title"
-            className="text-3xl font-semibold text-slate-900 md:text-4xl"
+            className="text-2xl font-semibold text-slate-900 sm:text-3xl md:text-4xl"
           >
             Past speakers
           </h2>
@@ -25,14 +25,14 @@ export const PastSpeakersSection = async () => {
         {speakers.map((speaker) => (
           <article
             key={speaker.name}
-            className="flex h-full flex-col gap-4 bg-transparent p-6 text-slate-900 transition hover:-translate-y-1"
+            className="flex h-full flex-col gap-4 bg-transparent p-4 text-slate-900 transition hover:-translate-y-1 sm:p-6"
           >
             {speaker.linkedin ? (
               <a
                 href={speaker.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block h-72 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent"
+                className="relative block h-64 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent sm:h-72"
               >
                 <Image
                   src={speaker.image}
@@ -43,7 +43,7 @@ export const PastSpeakersSection = async () => {
                 />
               </a>
             ) : (
-              <div className="relative h-72 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent">
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-slate-200 bg-transparent sm:h-72">
                 <Image
                   src={speaker.image}
                   alt={`${speaker.name} portrait`}

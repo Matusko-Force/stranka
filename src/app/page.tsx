@@ -27,14 +27,14 @@ const instagramPosts = [
 
 const Header = () => (
   <header className="sticky top-0 z-30 bg-[#f9f6ee]/95 backdrop-blur">
-    <div className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-4">
+    <div className="mx-auto flex max-w-[90rem] items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
       <Link href="/" className="flex items-center gap-3" aria-label="0100 Academy home">
         <Image
           src="/logo.png"
           alt="0100 Academy logo"
           width={96}
           height={96}
-          className="h-24 w-24"
+          className="h-14 w-14 sm:h-20 sm:w-20 md:h-24 md:w-24"
           priority
         />
       </Link>
@@ -48,7 +48,7 @@ const Header = () => (
       </nav>
       <a
         href="#signup"
-        className="hidden rounded-full bg-[#2c2a21] px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:inline-flex"
+        className="inline-flex rounded-full bg-[#2c2a21] px-4 py-2 text-xs font-semibold text-white transition hover:brightness-110 sm:px-5 sm:text-sm"
       >
         Join waitlist
       </a>
@@ -60,33 +60,33 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="mx-auto flex max-w-[90rem] flex-col gap-20 px-6 pb-20 pt-16 md:pt-20 lg:gap-24">
-        <section className="relative overflow-hidden px-8 py-16 md:px-16">
+      <main className="mx-auto flex max-w-[90rem] flex-col gap-14 px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:gap-20 lg:pt-20">
+        <section className="relative overflow-hidden px-0 py-8 sm:px-4 sm:py-12 md:px-12 md:py-16">
           <div className="absolute -top-16 right-0 h-56 w-56 rounded-full bg-transparent blur-[120px]" aria-hidden="true" />
-          <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
             <div className="space-y-7">
               <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
                 Upcoming cohort
               </span>
               <div>
-                <h1 id="hero-title" className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+                <h1 id="hero-title" className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
                   Next Venture Academy cohort opens soon
                 </h1>
-                <p className="mt-4 text-lg text-slate-600">
+                <p className="mt-4 text-base text-slate-600 sm:text-lg">
                   For aspiring investors, angel investors & next-generation venture capitalists.
                 </p>
               </div>
               <div>
                 <a
                   href="#signup"
-                  className="inline-flex items-center justify-center rounded-full bg-[#2c2a21] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-[#2c2a21] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110 sm:w-auto"
                 >
                   I want in
                 </a>
               </div>
             </div>
 
-            <div className="relative min-h-[360px] w-full overflow-hidden border border-slate-100 bg-transparent">
+            <div className="relative min-h-[260px] w-full overflow-hidden border border-slate-100 bg-transparent sm:min-h-[320px] md:min-h-[360px]">
               <Image
                 src="/hero-image.png"
                 alt="Community of operators meeting"
@@ -101,8 +101,8 @@ export default function Home() {
           <div className="mt-10 border-t border-slate-100 pt-8" />
         </section>
 
-        <section aria-label="Partners" className="bg-transparent px-6 py-10">
-          <p className="text-center text-3xl font-semibold uppercase tracking-[0.2em] text-slate-900">
+        <section aria-label="Partners" className="bg-transparent px-0 py-6 sm:px-2 sm:py-10">
+          <p className="text-center text-2xl font-semibold uppercase tracking-[0.15em] text-slate-900 sm:text-3xl sm:tracking-[0.2em]">
             Partners & Experts
           </p>
           <div className="mt-8 overflow-hidden">
@@ -134,7 +134,7 @@ export default function Home() {
                   return (
                     <div
                       key={`${logo.name}-${index}`}
-                      className="flex min-w-[180px] items-center justify-center opacity-70 transition hover:opacity-100"
+                      className="flex min-w-[140px] items-center justify-center opacity-70 transition hover:opacity-100 sm:min-w-[180px]"
                     >
                       <Image
                         src={logo.src}
@@ -154,11 +154,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="overview" className="px-6 py-10 text-center">
-          <h2 className="text-3xl font-semibold uppercase tracking-[0.2em] text-slate-900">
+        <section id="overview" className="px-0 py-8 text-center sm:px-4 sm:py-10">
+          <h2 className="text-2xl font-semibold uppercase tracking-[0.15em] text-slate-900 sm:text-3xl sm:tracking-[0.2em]">
             Our beliefs
           </h2>
-          <p className="mt-6 text-base text-slate-600 md:px-40">
+          <p className="mx-auto mt-5 max-w-4xl text-sm text-slate-600 sm:mt-6 sm:text-base md:px-10 lg:px-24">
             The tech world is evolving fast. But the venture investing? Not so much. Same people, similar background, with artificial barriers to enter the investment world.
             New technologies require diverse insights; new founders need a new wave of investors to understand them, and new markets need innovative ways of financing.
             Everyone should have access to the necessary knowledge and by providing accessible education real-world education from industry professionals we aim for the needed diversity and impact.
@@ -168,26 +168,26 @@ export default function Home() {
 
         <PastSpeakersSection />
 
-        <section className="px-6">
-          <h3 className="mb-6 text-2xl font-semibold uppercase tracking-[0.2em] text-slate-900">
+        <section className="px-0 sm:px-4">
+          <h3 className="mb-6 text-xl font-semibold uppercase tracking-[0.15em] text-slate-900 sm:text-2xl sm:tracking-[0.2em]">
             Watch clips from our previous speakers
           </h3>
-          <div className="grid gap-6 grid-cols-1 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {instagramPosts.map((permalink) => (
               <InstagramEmbed key={permalink} permalink={permalink} />
             ))}
           </div>
         </section>
 
-        <section id="signup" aria-labelledby="signup-title" className="space-y-8">
-          <div>
+        <section id="signup" aria-labelledby="signup-title" className="scroll-mt-28 space-y-6 sm:space-y-8">
+          <div className="text-center sm:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
               Secure a spot
             </p>
-            <h2 id="signup-title" className="mt-3 text-3xl font-semibold text-slate-900">
+            <h2 id="signup-title" className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
               Tell us about you to join the next cohort
             </h2>
-            <p className="mt-2 max-w-2xl text-base text-slate-600">
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600 sm:mx-0 sm:text-base">
               Share your name, company, and best email so we can review your profile and give you priority access when the new cohort opens.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function Home() {
             href="https://tally.so/r/gDMyyK"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[#ff5c35] px-8 py-3 text-base font-semibold text-white transition hover:brightness-110 sm:w-auto"
           >
             Apply now
           </a>

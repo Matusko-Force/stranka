@@ -18,7 +18,7 @@ export const InstagramEmbed = ({ permalink }: InstagramEmbedProps) => {
 
   return (
     <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-lg shadow-slate-300/40">
-      <div className="relative h-[620px] w-full">
+      <div className="relative h-[540px] w-full sm:h-[620px]">
         <iframe
           ref={iframeRef}
           title="Instagram reel"
